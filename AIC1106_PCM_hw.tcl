@@ -9,7 +9,6 @@
 # | AlexO by 2012 2012.08.12.17:32:19
 # | TLV320AIC1106 voice codec
 # | 
-# | C:/_MicroTag/uTagG32/trunk/hardware/FPGA/AIC1106/AIC1106_PCM.v
 # | 
 # |    ./AIC1106_PCM.v syn, sim
 # | 
