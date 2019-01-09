@@ -23,7 +23,7 @@ module AIC1106_PCM(
         aso_data,
         aso_valid,
 			
-			// TLV320AIC1106 signal
+	// TLV320AIC1106 signal
         coe_mclk,
         coe_pcmsyn,
         coe_pcmi,
@@ -91,7 +91,7 @@ wire                    rx_shft_in = (loopback_r)?(coe_pcmi):(coe_pcmo);
 
 assign                  avs_creg_readdata = (avs_creg_address[1:0] == 2'h0)?(state):(0);
 wire     [31:0]         state = {25'b0, underflow_r, coe_mute, ~coe_reset_n, 1'b0, volume_r[2:0]}; 
-wire                    creg_reg_sel_w      = avs_creg_write & avs_creg_chipselect & (avs_creg_address[1:0] == 2'h0); 
+wire                    creg_reg_sel_w = avs_creg_write & avs_creg_chipselect & (avs_creg_address[1:0] == 2'h0); 
 
 // NIOS control interface
 always @(posedge csi_avalon_clk or posedge csi_reset)
@@ -102,13 +102,13 @@ begin
      mute_r <= 0;
      volume_r[2:0] <= 1;  // 0 db gain
      loopback_r <= 0;
-	 enable_r <= 0;
+     enable_r <= 0;
   end   
   else if (creg_reg_sel_w)
   begin
      volume_r[2:0] <= avs_creg_writedata[2:0]; 
      mute_r        <= avs_creg_writedata[3];
-	 enable_r      <= avs_creg_writedata[4];
+     enable_r      <= avs_creg_writedata[4];
      loopback_r    <= avs_creg_writedata[5];
      reset_req_r   <= avs_creg_writedata[6];
   end   
