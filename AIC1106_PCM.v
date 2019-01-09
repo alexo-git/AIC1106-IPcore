@@ -7,12 +7,12 @@ module AIC1106_PCM(
         csi_audio_clk,
          
          // Control/status reg Avalon slave
-		avs_creg_address,
-		avs_creg_chipselect,
-		avs_creg_write,
-		avs_creg_read,
-		avs_creg_writedata,
-		avs_creg_readdata,         
+	avs_creg_address,
+	avs_creg_chipselect,
+	avs_creg_write,
+	avs_creg_read,
+	avs_creg_writedata,
+	avs_creg_readdata,         
 			
          // Avalon stream sink
         asi_data,
